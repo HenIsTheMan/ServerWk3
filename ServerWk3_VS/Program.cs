@@ -7,12 +7,21 @@ namespace ServerWk3 {
 
 			db.Connect("localhost", 3306, "test_db", "root", "password");
 
-			db.Query("SELECT * FROM students");
+			string[] texts = new string[]{
+				//"class",
+				"students"
+			};
+			int textsLen = texts.Length;
 
-			//Console.WriteLine("\nPress the Enter key to continue...");
+			for(int i = 0; i < textsLen; ++i) {
+				Console.WriteLine("> SELECT * FROM " + texts[i] + '\n');
+				db.Query("SELECT * FROM " + texts[i] + "\n\n");
+			}
+
+			//Console.WriteLine("\n\nPress the Enter key to continue...");
 			//Console.ReadLine();
 
-			Console.WriteLine("\nPress any key to continue...");
+			Console.WriteLine("\n\nPress any key to continue...");
 			Console.ReadKey();
 
 			//System.Threading.Thread.Sleep(1000);
