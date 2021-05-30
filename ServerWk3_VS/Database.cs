@@ -24,8 +24,18 @@ namespace ServerWk3 {
 					return;
 				}
 
+				int i;
+				int fieldCount = reader.FieldCount;
+				string text;
+
 				while(reader.Read()) {
-					Console.WriteLine(reader[0] + ", " + reader[1] + ", " + reader[2]);
+					text = string.Empty;
+
+					for(i = 0; i < fieldCount; ++i) {
+						text += reader[i] + (i == fieldCount - 1 ? "" : ", ");
+					}
+
+					Console.WriteLine(text);
 				}
 			} catch(Exception e) {
 				Console.WriteLine(e.ToString());

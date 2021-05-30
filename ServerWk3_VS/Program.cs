@@ -8,8 +8,9 @@ namespace ServerWk3 {
 			db.Connect("localhost", 3306, "test_db", "root", "password");
 
 			string[] texts = new string[]{
-				//"class",
-				"students"
+				"class",
+				//"enrolment",
+				//"students"
 			};
 			int textsLen = texts.Length;
 
