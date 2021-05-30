@@ -9,7 +9,7 @@ namespace ServerWk3 {
 
 			string[] texts = new string[]{
 				"class",
-				//"enrolment",
+				"enrolment",
 				"students"
 			};
 			int textsLen = texts.Length;

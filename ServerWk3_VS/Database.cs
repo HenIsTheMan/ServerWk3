@@ -17,25 +17,26 @@ namespace ServerWk3 {
 
 		public void Query(string query) {
 			try {
-				MySqlCommand cmd = new MySqlCommand(query, conn);
-				MySqlDataReader reader = cmd.ExecuteReader();
+				using(MySqlCommand cmd = new MySqlCommand(query, conn)) {
+					using(MySqlDataReader reader = cmd.ExecuteReader()) {
+						if(!reader.HasRows) {
+							return;
+						}
 
-				if(!reader.HasRows) {
-					return;
-				}
+						int i;
+						int fieldCount = reader.FieldCount;
+						string text;
 
-				int i;
-				int fieldCount = reader.FieldCount;
-				string text;
+						while(reader.Read()) {
+							text = string.Empty;
 
-				while(reader.Read()) {
-					text = string.Empty;
+							for(i = 0; i < fieldCount; ++i) {
+								text += reader[i] + (i == fieldCount - 1 ? "" : ", ");
+							}
 
-					for(i = 0; i < fieldCount; ++i) {
-						text += reader[i] + (i == fieldCount - 1 ? "" : ", ");
+							Console.WriteLine(text);
+						}
 					}
-
-					Console.WriteLine(text);
 				}
 			} catch(Exception e) {
 				Console.WriteLine(e.ToString());
