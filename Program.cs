@@ -1,6 +1,8 @@
-﻿class Program {
-	static void Main(string[] args) {
-		Uni.Database db = new Uni.Database();
-		db.Connect("localhost", 5055, "test_db", "Test Test", "password");
+﻿namespace ServerWk3 {
+	class Program {
+		static void Main(string[] args) {
+			Database db = new Database();
+			db.Connect("localhost", 3306, "test_db", "root", "password");
+		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace Uni {
+namespace ServerWk3 {
 	class Database {
 		MySqlConnection conn = new MySqlConnection();
 
