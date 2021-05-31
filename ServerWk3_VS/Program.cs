@@ -7,9 +7,18 @@ namespace ServerWk3 {
 
 			db.Connect("localhost", 3306, "test_db", "root", "password");
 
-			db.Query("INSERT INTO test_db.class (id, name) VALUES (7, \"Yes\");");
+			//just "class" can here
 
-			//DELETE FROM `test_db`.`class` WHERE (`id` = '5');
+			//db.Query("INSERT INTO test_db.class (id, name) VALUES (7, \"Yes\");");
+
+			//db.Query("DELETE FROM `test_db`.`class` WHERE (`id` = '4')");
+
+			//diff kinds of ids??
+			//insert multiple??
+			//delete multiple??
+			//delete all??
+
+			//db.Query("SELECT id FROM test_db.class;");
 
 			string[] texts = new string[]{
 				"class",
