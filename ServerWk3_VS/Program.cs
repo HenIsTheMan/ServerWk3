@@ -7,6 +7,10 @@ namespace ServerWk3 {
 
 			db.Connect("localhost", 3306, "test_db", "root", "password");
 
+			db.Query("INSERT INTO test_db.class (id, name) VALUES (7, \"Yes\");");
+
+			//DELETE FROM `test_db`.`class` WHERE (`id` = '5');
+
 			string[] texts = new string[]{
 				"class",
 				"enrolment",
