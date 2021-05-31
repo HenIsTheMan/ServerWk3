@@ -11,6 +11,10 @@ namespace ServerWk3 {
 
 			//db.Query("INSERT INTO test_db.class (id, name) VALUES (7, \"Yes\");");
 
+			db.Query("UPDATE test_db.class SET name = 'Yup'");
+
+			db.Query("UPDATE test_db.students SET firstName = 'Ok', lastName = 'Can' WHERE id = 1;");
+
 			//db.Query("DELETE FROM `test_db`.`class` WHERE (`id` = '4')");
 
 			//diff kinds of ids??
